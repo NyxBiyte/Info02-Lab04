@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
 
-        runTime(6);
+        runTime(100);
 
-        System.out.println(isPrime(5));
+        System.out.println(isPrime(101));
     }
 
     public static void runTime (int n){
