@@ -1,9 +1,12 @@
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
 
         runTime(100);
 
         System.out.println(isPrime(101));
+        System.out.println(sieveOfEratosthenes(101));
     }
 
     public static void runTime (int n){
@@ -93,5 +96,27 @@ public class Main {
             if (n % i == 0) return false;
         }
         return true;
+    }
+
+    public static List<Integer> sieveOfEratosthenes(int n) {
+        List<Integer> primesList = new ArrayList<>();
+
+
+
+        // Assume all numbers are prime at first
+        for (int i = 2; i <= n; i++) {
+            primesList.add(i);
+        }
+
+        for (int i = 2; i * i <= n; i++) {
+            for (int j = i * i; j <= n; j += i) {
+                if (primesList.contains(j)){
+                    primesList.remove(Integer.valueOf(j));
+                }
+            }
+        }
+
+
+        return primesList;
     }
 }
