@@ -74,7 +74,6 @@ public class Main {
             sum++;
         }
         System.out.println(sum);
-        sum = 0;
     }
     
     public static boolean isPrime (int n){
